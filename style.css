@@ -39,6 +39,40 @@ footer {
   background-color: rgba(255, 248, 236, 1);
 }
 
+.footer-logo {
+  width: 100px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-family: "Jomolhari", serif;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: "Jost", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: "Jost", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+p {
+  font-family: "Afacad", sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+}
+
 /********** Burger Menu ************/
 
 header {
@@ -74,14 +108,14 @@ nav {
 .menu a {
   display: block;
   padding: 10px;
-  color: rgba(251, 236, 219, 1);
+  color: black;
   text-decoration: none;
   transition: color 0.3s;
   text-align: end;
 }
 
 .menu a:hover {
-  color: #e68851;
+  color: rgba(0, 113, 56, 1);
 }
 
 .burger {

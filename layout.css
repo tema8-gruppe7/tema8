@@ -1,5 +1,29 @@
 /*********************** Index / forside *************************/
 
 /*********************** Opskriftliste *************************/
+.opskrift_list_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 10px;
+}
+
+.opskrift_list_box {
+  border: solid 0.5px black;
+  border-radius: 10px;
+}
+
+.buttons {
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.opskrifter h1 {
+  display: flex;
+  justify-content: center;
+}
 
 /************************** Opskrift ****************************/

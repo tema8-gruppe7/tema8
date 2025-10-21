@@ -8,14 +8,14 @@ document.querySelectorAll(".buttons button").forEach((btn) => {
 });
 
 function filterKlik(evt) {
-  showFiltered(evt.currentTarget.dataset.mealType);
+  showFiltered(evt.currentTarget.dataset.mealtype);
 }
 
 function showFiltered(filter) {
   if (filter == "All") {
     showMealType(allData);
   } else {
-    const filteredMealType = allData.filter((recipe) => recipe.mealType === filter);
+    const filteredMealType = allData.filter((recipe) => recipe.tags.includes(filter));
     showMealType(filteredMealType);
   }
 

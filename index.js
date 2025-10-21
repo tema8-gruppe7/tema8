@@ -12,8 +12,7 @@ function getData(url) {
     .then((data) => {
       allData = data.recipes;
       createCategories(allData);
-    })
-    .catch((error) => console.error("Fejl ved hentning af data:", error));
+    });
 }
 
 function createCategories(data) {

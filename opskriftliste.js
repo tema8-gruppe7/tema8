@@ -1,8 +1,14 @@
-console.log("Hej fra opskrift list");
 const mealType = new URLSearchParams(window.location.search).get("mealType");
+console.log("Hej fra opskrift list", mealType);
+
 const opskrift_list_container = document.querySelector(".opskrift_list_container");
 let allData;
-getData("https://dummyjson.com/recipes");
+if (mealType === "All") {
+  getData("https://dummyjson.com/recipes");
+} else {
+  getData("https://dummyjson.com/recipes/tag/" + mealType);
+}
+
 document.querySelectorAll(".buttons button").forEach((btn) => {
   btn.addEventListener("click", filterKlik);
 });
@@ -13,10 +19,9 @@ function filterKlik(evt) {
 
 function showFiltered(filter) {
   if (filter == "All") {
-    showMealType(allData);
+    getData("https://dummyjson.com/recipes");
   } else {
-    const filteredMealType = allData.filter((recipe) => recipe.tags.includes(filter));
-    showMealType(filteredMealType);
+    getData("https://dummyjson.com/recipes/tag/" + filter);
   }
 
   console.log("showFiltered", filter);
@@ -33,6 +38,7 @@ function getData(url) {
 }
 
 function showMealType(mealTypeArray) {
+  console.log("mealTypeArray", mealTypeArray);
   opskrift_list_container.innerHTML = "";
   mealTypeArray.forEach((recipe) => {
     opskrift_list_container.innerHTML += `
@@ -40,7 +46,7 @@ function showMealType(mealTypeArray) {
         <img src="${recipe.image}" alt="${recipe.name}" width="200" />
         <h2>${recipe.name}</h2>
         <p>${recipe.mealType.join(", ")}</p>
-        <a href="opskrift.html">Læs mere</a>
+        <a href="opskrift.html?id=${recipe.id}">Læs mere</a>
       </article>
     `;
   });
